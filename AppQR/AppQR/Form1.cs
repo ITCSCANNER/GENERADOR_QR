@@ -25,12 +25,9 @@ namespace AppQR
         {
             DateTime fechaAc = DateTime.Now;
             var fecha = fechaAc.ToString("yyyy-MM-dd|HH:mm");
-            /*Estas son pruebas*/
             var aula = "A1|";
             var FechaCompleta = aula+fecha;
 
-            
-            
             QrEncoder qrEncoder = new QrEncoder(ErrorCorrectionLevel.H);
             QrCode qrCode = new QrCode();
             qrEncoder.TryEncode(FechaCompleta, out qrCode);
