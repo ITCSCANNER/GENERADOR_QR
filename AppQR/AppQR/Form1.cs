@@ -24,29 +24,12 @@ namespace AppQR
         private void btnGenerar_Click(object sender, EventArgs e)
         {
             DateTime fechaAc = DateTime.Now;
-            var fecha = fechaAc.ToString("yyyy-MM-dd|HH:mm|");
+            var fecha = fechaAc.ToString("yyyy-MM-dd|HH:mm");
             var aula = "A1|";
             var FechaCompleta = aula+fecha;
 
             
-            /*var FechaCompletaCod = "";
-            for (int i=0; i< FechaCompleta.Length; i++)
-            {
-                var letra = Encoding.ASCII.GetBytes(FechaCompleta)[i];
-                letra += 6;
-                FechaCompletaCod += Convert.ToChar(letra).ToString();
-            }
-
-            var FechaCompletaDec = "";
-            for (int i = 0; i < FechaCompletaCod.Length; i++)
-            {
-                var letra = Encoding.ASCII.GetBytes(FechaCompletaCod)[i];
-                letra -= 6;
-                FechaCompletaDec += Convert.ToChar(letra).ToString();
-            }
-            MessageBox.Show(FechaCompletaCod+ "\n" + FechaCompletaDec, "Error Title", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-            */
+            
             QrEncoder qrEncoder = new QrEncoder(ErrorCorrectionLevel.H);
             QrCode qrCode = new QrCode();
             qrEncoder.TryEncode(FechaCompleta, out qrCode);
@@ -81,18 +64,14 @@ namespace AppQR
                 FechaCompletaCod += Convert.ToChar(letra).ToString();
             }
 
-            var FechaCompletaDec = "";
+            /*var FechaCompletaDec = "";
             for (int i = 0; i < FechaCompletaCod.Length; i++)
             {
                 var letra = Encoding.ASCII.GetBytes(FechaCompletaCod)[i];
                 letra -= 6;
                 FechaCompletaDec += Convert.ToChar(letra).ToString();
-            }
-            //MessageBox.Show(FechaCompletaCod + "\n" + FechaCompletaDec, "Error Title", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
+            }*/
             
-
-
             QrEncoder qrEncoder = new QrEncoder(ErrorCorrectionLevel.H);
             QrCode qrCode = new QrCode();
             qrEncoder.TryEncode(FechaCompletaCod, out qrCode);
