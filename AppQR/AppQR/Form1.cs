@@ -24,7 +24,7 @@ namespace AppQR
         private void btnGenerar_Click(object sender, EventArgs e)
         {
             DateTime fechaAc = DateTime.Now;
-            var fecha = fechaAc.ToString("yyyy-MM-dd|HH:mm|");
+            var fecha = fechaAc.ToString("yyyy-MM-dd|HH:mm");
             var aula = "A1|";
             var FechaCompleta = aula+fecha;
 
