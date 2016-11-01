@@ -25,6 +25,7 @@ namespace AppQR
         {
             DateTime fechaAc = DateTime.Now;
             var fecha = fechaAc.ToString("yyyy-MM-dd|HH:mm");
+            /*Estas son pruebas*/
             var aula = "A1|";
             var FechaCompleta = aula+fecha;
 
